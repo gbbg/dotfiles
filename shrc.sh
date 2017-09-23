@@ -47,26 +47,15 @@ quiet_which() {
 }
 
 add_to_path_end "/sbin"
-add_to_path_end "$HOME/Documents/Scripts"
-add_to_path_end "$HOME/Documents/Scripts/thirdparty"
-add_to_path_end "$HOME/Scripts"
-add_to_path_end "$HOME/Scripts/thirdparty"
-add_to_path_end "$HOME/Library/Python/2.7/bin"
-add_to_path_end "$HOME/.gem/ruby/2.3.0/bin"
-add_to_path_end "$HOME/.gem/ruby/2.0.0/bin"
-add_to_path_end "$HOME/.gem/ruby/1.8/bin"
-add_to_path_end "$HOME/.rbenv/bin"
-add_to_path_end "$HOME/.cabal/bin"
-add_to_path_end "/Applications/Fork.app/Contents/Resources"
-add_to_path_end "/Applications/TextMate.app/Contents/Resources"
-add_to_path_end "/data/github/shell/bin"
+# add_to_path_end "$HOME/Documents/Scripts/thirdparty"
+# add_to_path_end "$HOME/Scripts/thirdparty"
+# add_to_path_end "$HOME/Library/Python/2.7/bin"
+# add_to_path_end "/Applications/Fork.app/Contents/Resources"
+# add_to_path_end "/data/github/shell/bin"
 add_to_path_start "/usr/local/bin"
 add_to_path_start "/usr/local/sbin"
 add_to_path_start "$HOME/Homebrew/bin"
 add_to_path_start "$HOME/Homebrew/sbin"
-
-# Run rbenv if it exists
-quiet_which rbenv && add_to_path_start "$(rbenv root)/shims"
 
 # Aliases
 alias mkdir="mkdir -vp"
@@ -131,9 +120,6 @@ if [ "$MACOS" ]
 then
   export GREP_OPTIONS="--color=auto"
   export CLICOLOR="1"
-  export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
-  export RESQUE_REDIS_URL="redis://localhost:6379"
-  export HEROKU_ORGANIZATION="github-enterprise"
 
   if quiet_which diff-highlight
   then
@@ -155,12 +141,9 @@ then
   add_to_path_end /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
   add_to_path_end "$HOMEBREW_PREFIX/opt/git/share/git-core/contrib/diff-highlight"
 
-  alias ql="qlmanage -p 1>/dev/null"
   alias locate="mdfind -name"
   alias cpwd="pwd | tr -d '\n' | pbcopy"
   alias finder-hide="setfile -a V"
-  alias fork="fork_cli"
-  alias github="fork"
 
   # Old default Curl is broken for Git on Leopard.
   [ "$OSTYPE" = "darwin9.0" ] && export GIT_SSL_NO_VERIFY=1
@@ -216,11 +199,6 @@ cd() {
     && set_terminal_app_pwd
   pwd > "$HOME/.lastpwd"
   ls
-}
-
-# Use ruby-prof to generate a call stack
-ruby-call-stack() {
-  ruby-prof --printer=call_stack --file=call_stack.html -- "$@"
 }
 
 # Pretty-print JSON files
