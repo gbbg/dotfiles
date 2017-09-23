@@ -1,4 +1,0 @@
----
-BUNDLE_PATH: "vendor/ruby"
-BUNDLE_AUTO_INSTALL: "1"
-BUNDLE_JOBS: "8"
