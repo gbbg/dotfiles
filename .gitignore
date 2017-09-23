@@ -1,4 +1,7 @@
 /ssh/id_rsa
+/ssh/id_rsa.pub
+/ssh/id_dsa
+/ssh/id_dsa.pub
 /ssh/github_rsa*
 /ssh/known_hosts
 bundle/cache
