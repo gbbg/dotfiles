@@ -96,6 +96,7 @@ alias gnx='git annex'
 alias gp='git push'
 alias grh='git reset HEAD'
 alias gs="git status"
+alias gst="git status"
 alias gsh="git show"
 
 alias pjt='python -mjson.tool'
