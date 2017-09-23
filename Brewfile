@@ -1,5 +1,4 @@
 brew "macvim"
-linkapps
 
 tap "homebrew/core"
 tap "homebrew/bundle"
