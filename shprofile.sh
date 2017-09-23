@@ -1,6 +1,13 @@
 # 077 would be more secure, but 022 is more useful.
 umask 022
 
+# 2017-09: uncomment below to build everything from source
+# export HOMEBREW_BUILD_FROM_SOURCE=true
+
+# 2016-01-25: uncomment for docker
+# eval $(docker-machine env default)
+# export DOCKER_TLS_VERIFY=1
+
 # Save more history
 export HISTSIZE=100000
 export SAVEHIST=100000

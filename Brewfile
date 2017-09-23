@@ -1,8 +1,12 @@
+brew "macvim"
+linkapps
+
 tap "homebrew/core"
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "github/bootstrap"
 tap "caskroom/cask"
+
 brew "git"
 brew "jq"
 brew "jsonlint"
